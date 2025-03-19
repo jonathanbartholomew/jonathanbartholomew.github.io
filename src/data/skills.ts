@@ -16,9 +16,9 @@ const skillsData: SkillCategory[] = [
   {
     name: "Front-End",
     skills: [
-      { name: "React.js", level: 5, color: "#61DAFB" },
       { name: "JavaScript", level: 5, color: "#F7DF1E" },
       { name: "TypeScript", level: 4, color: "#3178C6" },
+      { name: "React.js", level: 3, color: "#61DAFB" },
       { name: "HTML", level: 5, color: "#E34F26" },
       { name: "CSS", level: 5, color: "#1572B6" },
       { name: "Ember.js", level: 3, color: "#E04E39" },
