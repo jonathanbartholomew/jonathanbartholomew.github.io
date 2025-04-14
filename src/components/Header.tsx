@@ -1,5 +1,6 @@
 // src/components/Header.tsx
 import { useState, useEffect } from "react";
+import logo from "../assets/images/jb-web-services-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +45,7 @@ const Header = () => {
               position: "relative",
             }}
           >
-            <span className="text-gradient">JB</span>
+            <img src={logo} alt="Logo" className="h-10" />
           </a>
 
           {/* Desktop Navigation */}
