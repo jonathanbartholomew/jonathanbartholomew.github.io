@@ -63,6 +63,13 @@ const skillsData: SkillCategory[] = [
       { name: "Kanban", level: 3 },
     ],
   },
+  {
+    name: "AI Tools & Technologies",
+    skills: [
+      { name: "Open AI", level: 4 },
+      { name: "Claude", level: 4 },
+    ],
+  },
 ];
 
 export default skillsData;

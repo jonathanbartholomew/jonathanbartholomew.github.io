@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+import headshot from "../../assets/images/inventive-signature-jonathan-trans-head-shot.png";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("professional");
@@ -39,12 +40,15 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex justify-center"
           >
-            <div className="relative w-64 h-64 rounded-xl overflow-hidden border-2 border-white/10">
-              {/* Placeholder for profile image - replace with your own */}
+            <div className="relative w-64 h-64 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-secondary via-highlight to-accent opacity-20"></div>
               <div className="absolute inset-0 bg-primary-dark opacity-60"></div>
               <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-white">
-                JB
+                <img
+                  src={headshot}
+                  alt="Profile"
+                  className="w-full h-full object-cover rounded-xl"
+                />
               </div>
 
               {/* Decorative elements */}
@@ -93,24 +97,23 @@ const About = () => {
                   className="space-y-4"
                 >
                   <p className="text-lg">
-                    I am a highly skilled Full Stack Developer with over 7 years
+                    I am a highly skilled Full Stack Developer with over 9 years
                     of experience across private and government sectors. My
                     expertise spans both front-end and back-end development,
-                    with a focus on creating responsive, efficient, and
-                    user-centric applications.
+                    with a focus on creating beautiful, responsive, efficient,
+                    and user-centric applications.
                   </p>
                   <p className="text-lg">
                     Currently, I'm developing scalable healthcare solutions at
-                    Occam Health Services while also leading front-end
-                    development for various projects at Inventive. My background
-                    includes work on interactive geospatial applications and
-                    robust software solutions using a wide range of
-                    technologies.
+                    Occam Health Services. My background includes work on many
+                    company websites, E-Commerce integration, interactive
+                    geospatial applications and robust software solutions using
+                    a wide range of technologies.
                   </p>
                   <p className="text-lg">
-                    I pride myself on writing clean, maintainable code and
-                    staying updated with industry best practices and emerging
-                    technologies.
+                    I pride myself on creating beautiful websites, writing
+                    clean, maintainable code and staying updated with industry
+                    best practices and emerging technologies.
                   </p>
                 </motion.div>
               )}
@@ -173,11 +176,8 @@ const About = () => {
                     continuously expanding my skill set.
                   </p>
                   <p className="text-lg">
-                    In my free time, I contribute to open-source projects and
-                    participate in community initiatives like Christmas in
-                    April. I'm also working on a digital card game called
-                    "Kingdoms and Castles" that combines my love for gaming and
-                    web development.
+                    In my free time, I enjoy spending time with my wife and
+                    child, playing video games and nerding out over D&D.
                   </p>
                   <p className="text-lg">
                     I believe in creating software that is not only functional
