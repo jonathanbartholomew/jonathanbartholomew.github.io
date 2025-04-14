@@ -1,13 +1,15 @@
 // src/components/sections/Contact.tsx
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const { ref, isVisible } = useIntersectionObserver({
     threshold: 0.1,
     once: true,
   });
+  const formRef = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -35,9 +37,20 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (replace with actual form submission)
+    // Clear any previous status
+    setSubmitStatus(null);
+
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Replace these with your actual EmailJS service ID, template ID, and public key
+      const result = await emailjs.sendForm(
+        "service_uraad3r",
+        "template_rw7jebj",
+        formRef.current!,
+        "xVJMXKQYMwWPN-ruQ"
+      );
+
+      console.log("Email sent successfully:", result.text);
+
       setSubmitStatus({
         success: true,
         message:
@@ -52,6 +65,7 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
+      console.error("Failed to send email:", error);
       setSubmitStatus({
         success: false,
         message:
@@ -119,7 +133,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-medium">Email</h4>
                   <a
-                    href="mailto:your.email@example.com"
+                    href="mailto:jonathan.bartholomew92@gmail.com"
                     className="text-text-secondary hover:text-secondary transition-colors"
                   >
                     jonathan.bartholomew92@gmail.com
@@ -248,7 +262,7 @@ const Contact = () => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit}>
+              <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
                     <label
