@@ -36,7 +36,14 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#home" className="text-xl font-bold relative z-10">
+          <a
+            href="#home"
+            className="text-xl font-bold relative"
+            style={{
+              zIndex: mobileMenuOpen ? 100 : 10,
+              position: "relative",
+            }}
+          >
             <span className="text-gradient">JB</span>
           </a>
 
@@ -64,8 +71,13 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="block md:hidden text-white"
+            className="block md:hidden text-white relative"
+            style={{
+              zIndex: mobileMenuOpen ? 100 : 60,
+              position: "relative",
+            }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle navigation menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -92,11 +104,18 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Removed backdrop-filter and related properties */}
         <div
-          className={`fixed inset-0 bg-primary-dark/95 flex flex-col items-center justify-center transition-all duration-300 z-50 md:hidden ${
-            mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          className={`fixed inset-0 bg-primary-dark flex flex-col items-center justify-center transition-all duration-300 z-40 md:hidden ${
+            mobileMenuOpen
+              ? "opacity-95 visible pointer-events-auto"
+              : "opacity-0 invisible pointer-events-none"
           }`}
+          style={{
+            backgroundColor: mobileMenuOpen
+              ? "rgba(5, 5, 5, 0.95)"
+              : "rgba(5, 5, 5, 0)",
+          }}
         >
           <nav>
             <ul className="flex flex-col items-center space-y-6">

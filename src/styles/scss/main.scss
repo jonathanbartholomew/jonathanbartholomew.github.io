@@ -117,8 +117,10 @@
   }
 
   // Glass morphism effect
-  .bg-glass {
-    @apply bg-primary/70 backdrop-blur-lg border border-white/5;
+  @media (min-width: 768px) {
+    .bg-glass {
+      @apply bg-primary/70 backdrop-blur-lg border border-white/5;
+    }
   }
 
   // Custom scrollbar
