@@ -1,73 +1,59 @@
 // src/data/skills.ts
 
-export interface Skill {
+export interface SkillEntry {
   name: string;
-  level: number; // 1-5
-  icon?: string;
-  color?: string;
+  size: "lg" | "md" | "sm";
 }
 
-export interface SkillCategory {
+export interface SkillGroup {
   name: string;
-  skills: Skill[];
+  skills: SkillEntry[];
 }
 
-const skillsData: SkillCategory[] = [
+const skillsData: SkillGroup[] = [
   {
-    name: "Front-End",
+    name: "Frontend",
     skills: [
-      { name: "JavaScript", level: 5, color: "#F7DF1E" },
-      { name: "TypeScript", level: 4, color: "#3178C6" },
-      { name: "React.js", level: 3, color: "#61DAFB" },
-      { name: "HTML", level: 5, color: "#E34F26" },
-      { name: "CSS", level: 5, color: "#1572B6" },
-      { name: "Ember.js", level: 3, color: "#E04E39" },
-      { name: "Velocity", level: 3, color: "#53B230" },
+      { name: "React", size: "lg" },
+      { name: "TypeScript", size: "lg" },
+      { name: "Astro", size: "md" },
+      { name: "Next.js", size: "md" },
+      { name: "HTML · CSS", size: "sm" },
+      { name: "GSAP", size: "sm" },
+      { name: "Figma · Spline", size: "sm" },
     ],
   },
   {
-    name: "Back-End",
+    name: "Backend",
     skills: [
-      { name: "PHP", level: 4, color: "#777BB4" },
-      { name: "MySQL", level: 4, color: "#4479A1" },
-      { name: "SQL", level: 4, color: "#f29111" },
-      { name: "Java", level: 3, color: "#007396" },
-      { name: "C#", level: 3, color: "#239120" },
-      { name: "CodeIgniter", level: 3, color: "#EE4323" },
+      { name: "Ruby on Rails", size: "lg" },
+      { name: "Node.js", size: "lg" },
+      { name: "Laravel", size: "md" },
+      { name: "PostgreSQL", size: "md" },
+      { name: "REST · GraphQL", size: "sm" },
+      { name: "WordPress", size: "sm" },
     ],
   },
   {
-    name: "DevOps & Tools",
+    name: "Specialty",
     skills: [
-      { name: "AWS (EC2)", level: 4, color: "#FF9900" },
-      { name: "Git", level: 4, color: "#F05032" },
-      { name: "GitLab", level: 5, color: "#FCA121" },
-      { name: "Linux", level: 4, color: "#FCC624" },
-      { name: "Windows", level: 4, color: "#0078D6" },
-      { name: "GitHub", level: 4, color: "#181717" },
+      { name: "HIPAA Systems", size: "lg" },
+      { name: "Agentic AI", size: "lg" },
+      { name: "Claude / Anthropic", size: "md" },
+      { name: "Geospatial", size: "md" },
+      { name: "E-commerce", size: "sm" },
+      { name: "Shopify", size: "sm" },
     ],
   },
   {
-    name: "CMS & Migration",
+    name: "Tools",
     skills: [
-      { name: "WordPress", level: 4, color: "#21759B" },
-      { name: "Cascade CMS", level: 4, color: "#2BACE2" },
-    ],
-  },
-  {
-    name: "Project Management",
-    skills: [
-      { name: "GitLab Administration", level: 5 },
-      { name: "Agile Methodologies", level: 4 },
-      { name: "Scrum", level: 3 },
-      { name: "Kanban", level: 3 },
-    ],
-  },
-  {
-    name: "AI Tools & Technologies",
-    skills: [
-      { name: "Open AI", level: 4 },
-      { name: "Claude", level: 4 },
+      { name: "AWS Amplify", size: "lg" },
+      { name: "GitHub Pages", size: "md" },
+      { name: "Sanity CMS", size: "md" },
+      { name: "Electron", size: "md" },
+      { name: "Gumroad", size: "sm" },
+      { name: "VS Code", size: "sm" },
     ],
   },
 ];
