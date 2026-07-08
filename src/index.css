@@ -859,7 +859,7 @@ footer {
   }
 
   #hero {
-    padding: 0 1.5rem 4rem;
+    padding: 0 1.5rem 7rem;
   }
   .hero-name .line-1 {
     font-size: clamp(4.5rem, 22vw, 10rem);
